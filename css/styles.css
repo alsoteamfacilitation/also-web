@@ -563,6 +563,11 @@ main { position: relative; z-index: 1; }
     opacity: 1;
 }
 
+a:focus-visible, button:focus-visible, input:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
 .profile-link:focus-visible {
     outline: 2px solid rgba(255, 255, 255, 0.4);
     outline-offset: 2px;
@@ -1227,9 +1232,21 @@ body.modal-open {
     .hero-title             { font-size: clamp(1.9rem, 9vw, 3rem); }
 }
 
+@media (max-width: 768px) {
+    .nav-pill {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+    .hero-stat {
+        backdrop-filter: none;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .reveal, .btn, .nav-links a, body::before, .orb { animation: none; transition: none; }
+    body::before { animation: none !important; }
+    .orb { animation: none !important; }
     .reveal { opacity: 1; transform: none; }
     .reveal-item { opacity: 1; transform: none; }
 }
