@@ -319,6 +319,44 @@ main { position: relative; z-index: 1; }
     line-height: 1.75;
 }
 
+.scene-disclaimer {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+    color: var(--text-dim);
+    font-size: 0.92rem;
+    max-width: 58ch;
+    margin: 1.4rem auto 0;
+    line-height: 1.75;
+    text-align: left;
+    padding: 1rem 1.3rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--glass-glow);
+    background: var(--accent-soft);
+}
+
+.scene-disclaimer-icon {
+    width: 2.2rem;
+    height: 2.2rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--accent-hi);
+    filter: drop-shadow(0 0 8px rgba(161, 0, 255, 0.35));
+}
+
+.scene-disclaimer-icon svg {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.scene-disclaimer p {
+    margin: 0;
+}
+
 /* ================================================================
    HERO
    ================================================================ */
@@ -579,9 +617,8 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 
 .methods-grid {
     display: grid;
-    grid-template-columns: 1.35fr 1fr;
-    gap: 1.25rem;
-    align-items: stretch;
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
 }
 
 .methods-wrap {
@@ -606,9 +643,10 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 
 .methods-panels {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 1.4rem;
+    align-items: stretch;
 }
 
 .methods-panels .card--glass {
@@ -1209,9 +1247,12 @@ body.modal-open {
    ================================================================ */
 
 @media (max-width: 1100px) {
-    .methods-grid          { grid-template-columns: 1fr; }
     .client-mosaic          { grid-template-columns: repeat(3, 1fr); }
     .client-card--wide      { grid-column: span 1; }
+}
+
+@media (max-width: 720px) {
+    .methods-panels         { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 880px) {

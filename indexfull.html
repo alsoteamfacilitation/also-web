@@ -174,6 +174,44 @@ main { position: relative; z-index: 1; }
     line-height: 1.75;
 }
 
+.scene-disclaimer {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+    color: var(--text-dim);
+    font-size: 0.92rem;
+    max-width: 58ch;
+    margin: 1.4rem auto 0;
+    line-height: 1.75;
+    text-align: left;
+    padding: 1rem 1.3rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--glass-glow);
+    background: var(--accent-soft);
+}
+
+.scene-disclaimer-icon {
+    width: 2.2rem;
+    height: 2.2rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--accent-hi);
+    filter: drop-shadow(0 0 8px rgba(161, 0, 255, 0.35));
+}
+
+.scene-disclaimer-icon svg {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.scene-disclaimer p {
+    margin: 0;
+}
+
 .hero-scene {
     flex-direction: column;
     justify-content: center;
@@ -378,9 +416,8 @@ main { position: relative; z-index: 1; }
 
 .methods-grid {
     display: grid;
-    grid-template-columns: 1.35fr 1fr;
-    gap: 1.25rem;
-    align-items: stretch;
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
 }
 
 .methods-wrap {
@@ -405,9 +442,10 @@ main { position: relative; z-index: 1; }
 }
 
 .methods-panels {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 1.4rem;
+    align-items: stretch;
 }
 
 .methods-panels .card--glass {
@@ -824,11 +862,14 @@ details.flat-details .flat-body {
 }
 
 @media (max-width: 1100px) {
-    .methods-grid { grid-template-columns: 1fr; }
     .client-mosaic { grid-template-columns: repeat(3, 1fr); }
     .client-photos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .client-photos img { height: clamp(360px, 50vw, 620px); }
     .client-photos img:nth-child(n) { grid-column: auto; }
+}
+
+@media (max-width: 720px) {
+    .methods-panels { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 880px) {
@@ -950,6 +991,12 @@ details.flat-details .flat-body {
                     <span class="tag">La nostra value proposition</span>
                     <h2 class="scene-title">Non intratteniamo il gruppo.<br>Rendiamo il confronto <em>utile</em>.</h2>
                     <p class="scene-intro">Il nostro lavoro unisce facilitazione, design dell&rsquo;esperienza e attenzione al risultato finale del workshop.</p>
+                    <div class="scene-disclaimer">
+                        <span class="scene-disclaimer-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 11v5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="7.8" r="1.1" fill="currentColor"/></svg>
+                        </span>
+                        <p>Non proponiamo invece attivit&agrave; puramente ricreative o di intrattenimento. Le esperienze che facilitiamo utilizzano il gioco come strumento di coinvolgimento, ma sono sempre orientate a favorire conoscenza reciproca, collaborazione, fiducia e consapevolezza all&rsquo;interno del gruppo.</p>
+                    </div>
                 </header>
 
                 <div class="value-grid">
